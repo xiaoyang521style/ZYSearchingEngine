@@ -13,7 +13,7 @@
 @end
 @implementation ZYSEManager
 /**以字典方式添加解析的单个数据源，id标识为了防止重名*/
-+ (id)addInitializeSearchDict:(NSDictionary *)dict value:(NSString *)value identifer:(NSString *)identifier model:(id)model{
++ (id)addInitializeSearchValue:(NSString *)value identifer:(NSString *)identifier model:(id)model{
     ZYSEManager *manager = [ZYSEManager shareInstance];
     [(ZYSEModel *)model searchWithId:identifier value:value hanyuPinyinOutputFormat:manager.outputFormat];
     return  model;
