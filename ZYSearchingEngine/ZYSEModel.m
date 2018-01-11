@@ -5,6 +5,7 @@
 -(id)searchWithId:(NSString *)searchId  value:(NSString *)value hanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)pinyinFormat {
    
     self.searchValue = value;
+    self.searchId = searchId;
     // 拼音全拼
     NSMutableString *completeSpelling = [[NSMutableString alloc] init];
     NSMutableString *polyPhoneCompleteSpelling;
