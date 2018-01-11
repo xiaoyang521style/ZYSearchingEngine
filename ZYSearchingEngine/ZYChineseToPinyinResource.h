@@ -1,4 +1,3 @@
-
 #ifndef _ChineseToPinyinResource_
 #define _ChineseToPinyinResource_
 #import <Foundation/Foundation.h>

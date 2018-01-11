@@ -1,5 +1,4 @@
 
-
 #include "ZYPinyinOutputFormat.h"
 @implementation ZYPinyinOutputFormat
 @synthesize vCharType=_vCharType;

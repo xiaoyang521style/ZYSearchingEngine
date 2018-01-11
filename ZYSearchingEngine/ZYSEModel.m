@@ -1,11 +1,8 @@
-
 #import "ZYSEModel.h"
 #import "ZYPinYinTools.h"
 @implementation ZYSEModel
 
-
-
--(id)searchWithId:(NSString *)searchId  value:(NSString *)value hanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)pinyinFormat{
+-(id)searchWithId:(NSString *)searchId  value:(NSString *)value hanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)pinyinFormat {
    
     self.searchValue = value;
     // 拼音全拼
@@ -109,9 +106,7 @@
             initialString = [initialString stringByAppendingString:hanyuChar];
         }
     }
-    
     self.searchValue = value;
-    
     self.completeSpelling = completeSpelling;
     self.initialString = initialString;
     self.pinyinLocationString = [completeSpellingArray componentsJoinedByString:@","];

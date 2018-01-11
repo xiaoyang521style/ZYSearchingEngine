@@ -4,7 +4,6 @@
 #include "ZYPinyinFormatter.h"
 #include "ZYPinyinHelper.h"
 
-
 #define HANYU_PINYIN @"Hanyu"
 #define WADEGILES_PINYIN @"Wade"
 #define MPS2_PINYIN @"MPSII"
@@ -28,8 +27,7 @@
 
 + (void)getFormattedHanyuPinyinStringArrayWithChar:(unichar)ch
                        withHanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)outputFormat
-                                       outputBlock:(OutputArrayBlock)outputBlock
-{
+                                       outputBlock:(OutputArrayBlock)outputBlock {
     [ZYPinyinHelper getUnformattedHanyuPinyinStringArrayWithChar:ch outputBlock:^(NSArray *array) {
         if (outputBlock) {
             if (nil != array) {
@@ -48,8 +46,7 @@
 }
 
 + (void)getUnformattedHanyuPinyinStringArrayWithChar:(unichar)ch
-                                         outputBlock:(OutputArrayBlock)outputBlock
-{
+                                         outputBlock:(OutputArrayBlock)outputBlock {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSArray *array= [[ZYChineseToPinyinResource getInstance] getHanyuPinyinStringArrayWithChar:ch];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -61,33 +58,28 @@
 }
 
 + (void)toTongyongPinyinStringArrayWithChar:(unichar)ch
-                                outputBlock:(OutputArrayBlock)outputBlock
-{
+                                outputBlock:(OutputArrayBlock)outputBlock {
     return [ZYPinyinHelper convertToTargetPinyinStringArrayWithChar:ch withPinyinRomanizationType: TONGYONG_PINYIN outputBlock:outputBlock];
 }
 
 + (void)toWadeGilesPinyinStringArrayWithChar:(unichar)ch
-                                 outputBlock:(OutputArrayBlock)outputBlock
-{
+                                 outputBlock:(OutputArrayBlock)outputBlock {
     [ZYPinyinHelper convertToTargetPinyinStringArrayWithChar:ch withPinyinRomanizationType: WADEGILES_PINYIN outputBlock:outputBlock];
 }
 
 + (void)toMPS2PinyinStringArrayWithChar:(unichar)ch
-                            outputBlock:(OutputArrayBlock)outputBlock
-{
+                            outputBlock:(OutputArrayBlock)outputBlock {
     [ZYPinyinHelper convertToTargetPinyinStringArrayWithChar:ch withPinyinRomanizationType: MPS2_PINYIN outputBlock:outputBlock];
 }
 
 + (void)toYalePinyinStringArrayWithChar:(unichar)ch
-                            outputBlock:(OutputArrayBlock)outputBlock
-{
+                            outputBlock:(OutputArrayBlock)outputBlock {
     [ZYPinyinHelper convertToTargetPinyinStringArrayWithChar:ch withPinyinRomanizationType: YALE_PINYIN outputBlock:outputBlock];
 }
 
 + (void)convertToTargetPinyinStringArrayWithChar:(unichar)ch
                       withPinyinRomanizationType:(NSString *)targetPinyinSystem
-                                     outputBlock:(OutputArrayBlock)outputBlock
-{
+                                     outputBlock:(OutputArrayBlock)outputBlock {
     
     [ZYPinyinHelper getUnformattedHanyuPinyinStringArrayWithChar:ch outputBlock:^(NSArray *array) {
         if (outputBlock) {
@@ -105,15 +97,13 @@
     }];
 }
 + (void)toGwoyeuRomatzyhStringArrayWithChar:(unichar)ch
-                                outputBlock:(OutputArrayBlock)outputBlock
-{
+                                outputBlock:(OutputArrayBlock)outputBlock {
     
     [ZYPinyinHelper convertToGwoyeuRomatzyhStringArrayWithChar:ch outputBlock:outputBlock];
 }
 
 + (void)convertToGwoyeuRomatzyhStringArrayWithChar:(unichar)ch
-                                       outputBlock:(OutputArrayBlock)outputBlock
-{
+                                       outputBlock:(OutputArrayBlock)outputBlock {
     [ZYPinyinHelper getUnformattedHanyuPinyinStringArrayWithChar:ch outputBlock:^(NSArray *array) {
         if (outputBlock) {
             if (nil != array) {
@@ -134,26 +124,7 @@
 + (void)toHanyuPinyinStringWithNSString:(NSString *)str
             withHanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)outputFormat
                            withNSString:(NSString *)seperater
-                            outputBlock:(OutputStringBlock)outputBlock
-{
-    //   __block NSMutableString *resultPinyinStrBuf = [[NSMutableString alloc] init];
-    //    for (int i = 0; i <  str.length; i++) {
-    //         [PinyinHelper getFirstHanyuPinyinStringWithChar:[str characterAtIndex:i] withHanyuPinyinOutputFormat:outputFormat outputBlock:^(NSString *pinYin) {
-    //             if (nil != pinYin) {
-    //                 [resultPinyinStrBuf appendString:pinYin];
-    //                 if (i != [str length] - 1) {
-    //                     [resultPinyinStrBuf appendString:seperater];
-    //                 }
-    //             }
-    //             else {
-    //                 [resultPinyinStrBuf appendFormat:@"%C",[str characterAtIndex:i]];
-    //             }
-    //             if (outputBlock) {
-    //                 outputBlock(resultPinyinStrBuf);
-    //             }
-    //
-    //         }];
-    //    }
+                            outputBlock:(OutputStringBlock)outputBlock {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         __block NSMutableString *resultPinyinStrBuf = [[NSMutableString alloc] init];
         for (int i = 0; i <  str.length; i++) {
@@ -178,8 +149,7 @@
 
 + (void)getFirstHanyuPinyinStringWithChar:(unichar)ch
               withHanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)outputFormat
-                              outputBlock:(OutputStringBlock)outputBlock
-{
+                              outputBlock:(OutputStringBlock)outputBlock {
     [self getFormattedHanyuPinyinStringArrayWithChar:ch withHanyuPinyinOutputFormat:outputFormat outputBlock:^(NSArray *array) {
         if (outputBlock) {
             if ((nil != array) && ((int) [array count] > 0)) {

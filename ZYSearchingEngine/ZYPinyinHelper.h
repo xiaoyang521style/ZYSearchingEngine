@@ -1,10 +1,3 @@
-//
-//  ZYPinyinHelper.h
-//  ZYSearchingEngine
-//
-//  Created by develop5 on 2018/1/11.
-//  Copyright © 2018年 yiqihi. All rights reserved.
-//
 #ifndef _PinyinHelper_
 #define _PinyinHelper_
 #import <Foundation/Foundation.h>

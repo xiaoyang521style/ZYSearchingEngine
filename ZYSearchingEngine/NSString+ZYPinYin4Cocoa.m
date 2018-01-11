@@ -1,11 +1,3 @@
-//
-//  NSString+ZYPinYin4Cocoa.m
-//  ZYSearchingEngine
-//
-//  Created by develop5 on 2018/1/11.
-//  Copyright © 2018年 yiqihi. All rights reserved.
-//
-
 #import "NSString+ZYPinYin4Cocoa.h"
 #ifdef DEBUG
 #define PYLog(...) NSLog(__VA_ARGS__)
@@ -37,11 +29,6 @@
 }
 
 - (NSInteger)indexOfInt:(int)ch {
-    //    unichar c = (unichar) ch;
-    //    for(int i=0;i<self.length;i++)
-    //        if(c == [self characterAtIndex:i])
-    //            return i;
-    //    return -1;
     return [self indexOf:ch fromIndex:0];
 }
 

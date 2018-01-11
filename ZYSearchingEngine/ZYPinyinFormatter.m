@@ -9,11 +9,14 @@
 #include "ZYPinyinFormatter.h"
 #include "ZYPinyinOutputFormat.h"
 #import "NSString+ZYPinYin4Cocoa.h"
+
 @interface ZYPinyinFormatter ()
 +(NSInteger)getNumericValue:(unichar)c;
 +(NSInteger)indexOfChar:(int*) table ch:(unichar)c;
 @end
+
 @implementation ZYPinyinFormatter
+
 static int numericKeys[] = {
     0x0030, 0x0041, 0x0061, 0x00b2, 0x00b9, 0x00bc, 0x0660, 0x06f0,
     0x0966, 0x09e6, 0x09f4, 0x09f9, 0x0a66, 0x0ae6, 0x0b66, 0x0be7,
@@ -26,6 +29,7 @@ static int numericKeys[] = {
     0x3007, 0x3021, 0x3038, 0x3039, 0x303a, 0x3280, 0xff10, 0xff21,
     0xff41,
 };
+
 static unichar numericValues[] = {
     0x0039, 0x0030, 0x005a, 0x0037, 0x007a, 0x0057, 0x00b3, 0x00b0,
     0x00b9, 0x00b8, 0x00be, 0x0000, 0x0669, 0x0660, 0x06f9, 0x06f0,
@@ -47,6 +51,7 @@ static unichar numericValues[] = {
     0x303a, 0x301c, 0x3289, 0x327f, 0xff19, 0xff10, 0xff3a, 0xff17,
     0xff5a, 0xff37,
 };
+
 + (NSString *)formatHanyuPinyinWithNSString:(NSString *)pinyinStr
                 withHanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)outputFormat {
     if ((ToneTypeWithToneMark == [outputFormat toneType]) && ((VCharTypeWithV == [outputFormat vCharType]) || (VCharTypeWithUAndColon == [outputFormat vCharType]))) {
@@ -133,8 +138,7 @@ static unichar numericValues[] = {
     }
 }
 
-+(NSInteger)getNumericValue:(unichar)c
-{
++(NSInteger)getNumericValue:(unichar)c {
     if (c < 128) {
         // Optimized for ASCII
         if (c >= '0' && c <= '9') {
@@ -164,7 +168,7 @@ static unichar numericValues[] = {
     
 }
 
-+(NSInteger)indexOfChar:(int*) table ch:(unichar)c{
++(NSInteger)indexOfChar:(int*) table ch:(unichar)c {
     NSInteger len=sizeof(table)/sizeof(table[0]);
     for (int i = 0; i < len; i++) {
         if (table[i] == (int) c) {
@@ -173,7 +177,6 @@ static unichar numericValues[] = {
     }
     return -1;
 }
-
 
 - (id)init {
     return [super init];

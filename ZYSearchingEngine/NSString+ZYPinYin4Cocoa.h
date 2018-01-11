@@ -1,13 +1,5 @@
-//
-//  NSString+ZYPinYin4Cocoa.h
-//  ZYSearchingEngine
-//
-//  Created by develop5 on 2018/1/11.
-//  Copyright © 2018年 yiqihi. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
-
 @interface NSString (ZYPinYin4Cocoa)
 - (NSInteger)indexOfString:(NSString *)s;
 - (NSInteger)indexOfString:(NSString *)s fromIndex:(int)index;
