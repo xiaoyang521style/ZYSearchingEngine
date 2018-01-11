@@ -101,8 +101,7 @@ Pod::Spec.new do |s|
   #  You can preserve files from being cleaned, please don't preserve
   #  non-essential files like tests, examples and documentation.
   #
-
-  s.resource  = "ZYSearchingEngine.bundle"
+  s.resource  = "ZYSearchingEngine/*.{bundle}"
   # s.resources = "Resources/*.png"
 
 
