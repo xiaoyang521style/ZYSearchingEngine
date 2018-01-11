@@ -142,7 +142,7 @@
 + (SearchResultModel *)searchEffectiveResultWithSearchString:(NSString *)searchStrLower model:(ZYSEModel *)model{
     SearchResultModel *resultModel = [self
                                       _searchEffectiveResultWithSearchString:searchStrLower
-                                      nameString:model.value
+                                      nameString:model.searchValue
                                       completeSpelling:model.completeSpelling
                                       initialString:model.initialString
                                       pinyinLocationString:model.pinyinLocationString
@@ -155,7 +155,7 @@
         // 如果正常匹配没有对应结果，且该model存在多音字，则尝试多音字匹配
         resultModel = [ZYPinYinTools
                        _searchEffectiveResultWithSearchString:searchStrLower
-                       nameString:model.value
+                       nameString:model.searchValue
                        completeSpelling:model.polyPhoneCompleteSpelling
                        initialString:model.polyPhoneInitialString
                        pinyinLocationString:model.polyPhonePinyinLocationString

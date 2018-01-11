@@ -6,7 +6,7 @@
 /** 唯一标识符 */
 @property (nonatomic, copy) NSString *searchId;
 /** 搜索的value*/
-@property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *searchValue;
 /** 高亮位置 */
 @property (nonatomic, assign) NSInteger highlightLoaction;
 /** 关键字范围 */

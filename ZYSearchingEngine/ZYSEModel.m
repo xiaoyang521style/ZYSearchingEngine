@@ -7,7 +7,7 @@
 
 -(id)searchWithId:(NSString *)searchId  value:(NSString *)value hanyuPinyinOutputFormat:(ZYPinyinOutputFormat *)pinyinFormat{
    
-    self.value = value;
+    self.searchValue = value;
     // 拼音全拼
     NSMutableString *completeSpelling = [[NSMutableString alloc] init];
     NSMutableString *polyPhoneCompleteSpelling;
@@ -110,7 +110,7 @@
         }
     }
     
-    self.value = value;
+    self.searchValue = value;
     
     self.completeSpelling = completeSpelling;
     self.initialString = initialString;
