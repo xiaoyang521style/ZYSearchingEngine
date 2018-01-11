@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "FlieBoard"
-  s.version      = "1.1.4"
-  s.summary      = "an Animate on iOS."
+  s.name         = "ZYSearchingEngine"
+  s.version      = "1.0.0"
+  s.summary      = "SearchingEngine on iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
  
 
-  s.homepage     = "https://github.com/xiaoyang521style/FlieBoard"
+  s.homepage     = "https://github.com/xiaoyang521style/ZYSearchingEngine"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/xiaoyang521style/FlieBoard.git", :tag => "1.1.4" }
+  s.source = { :git => "https://github.com/xiaoyang521style/ZYSearchingEngine.git", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ZYFlipViewController", "ZYFlipViewController/*.{h,m}"
+  s.source_files  = "ZYSearchingEngine", "ZYSearchingEngine/*.{h,m}"
 
   #s.public_header_files = "ZXYShineButton/*.h"
 
@@ -102,7 +102,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  #s.resource  = "ShineButton.bundle"
+  s.resource  = "ZYSearchingEngine.bundle"
   # s.resources = "Resources/*.png"
 
 
@@ -113,7 +113,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-   s.frameworks = "UIKit", "AudioToolbox"
+  # s.frameworks = "UIKit", "AudioToolbox"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
