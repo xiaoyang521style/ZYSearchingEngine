@@ -10,6 +10,13 @@
     [(ZYSEModel *)model searchWithId:identifier value:value hanyuPinyinOutputFormat:manager.outputFormat];
     return  model;
 }
+#pragma Setters && Getters
+- (ZYPinyinOutputFormat *)outputFormat {
+    if (!_outputFormat) {
+        _outputFormat = [ZYPinYinTools getOutputFormat];
+    }
+    return _outputFormat;
+}
 + (ZYSEManager *)shareInstance {
     static dispatch_once_t onceToken;
     static ZYSEManager *_instance;
