@@ -33,4 +33,4 @@ ZYPersonModel *model = [[ZYPersonModel alloc]init];
         
 效果图
 -----------------------------------
-![baidu-images](https://github.com/xiaoyang521style/ZYSearchingEngine/blob/master/Resoures/ZXYShineButton.gif?raw=true) 
+![baidu-images](https://github.com/xiaoyang521style/ZYSearchingEngine/blob/master/Resoures/ZYSearchingEngine.gif?raw=true) 
