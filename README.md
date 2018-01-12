@@ -22,7 +22,8 @@ pod 'ZYSearchingEngine'
 ZYPersonModel *model = [[ZYPersonModel alloc]init];
         model.other = dic[@"my"];
         model.name =  dic[@"name"];
-        [ZYSEManager addInitializeSearchValue:dic[@"name"] identifer:[NSString stringWithFormat:@"%d",i] model:model]
+        [ZYSEManager addInitializeSearchValue:dic[@"name"] identifer:[NSString stringWithFormat:@"%d",i] model:model];
+        [self.modelArr addObject:model];
 
 3.查询搜索对象
 
